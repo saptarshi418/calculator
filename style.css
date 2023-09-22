@@ -13,7 +13,7 @@ html,body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg,#0e0e0e, #3d4a60);
+    background: linear-gradient(145deg,#0e0e0e, #3d4a60 , black);
 
 }
 .calculator{
