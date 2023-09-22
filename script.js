@@ -1,28 +1,32 @@
-let input = document.getElementById('input_box');
-let buttons = document.querySelectorAll('button');
-
-let string = "";
-let arr = Array.from(buttons);
-arr.forEach(button => {
-    button.addEventListener('click',(e)=>{
-        if(e.target.innerHTML == '='){
-            string = eval(string);
-            input.value = string;
+document.addEventListener("DOMContentLoaded", function () {
+    const inputBox = document.getElementById("input_box");
+    const buttons = document.querySelectorAll("button");
+  
+    
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const buttonText = button.textContent;
+  
+        if (buttonText === "=") {
+          try {
+            
+            const expression = inputBox.value.replace(/%/g, '/100');
+            inputBox.value = eval(expression);
+          } catch (error) {
+            
+            inputBox.value = "Error";
+          }
+        } else if (buttonText === "AC") {
+          
+          inputBox.value = "";
+        } else if (buttonText === "DEL") {
+          
+          inputBox.value = inputBox.value.slice(0, -1);
+        } else {
+          
+          inputBox.value += buttonText;
         }
-        else if(e.target.innerHTML == 'AC'){
-            string ="";
-            input.value=string;
-        }
-        else if(e.target.innerHTML=='DEL'){
-            string = string.substring(0,string.length-1);
-            input.value = string;
- 
-        }
-        
-        else{
-            string+= e.target.innerHTML;
-            input.value = string;
-        }
-
-     })
-})
+      });
+    });
+  });
+  
