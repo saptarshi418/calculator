@@ -14,7 +14,8 @@ html,body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(145deg,#0e0e0e, #3d4a60 , black);
-
+    display: flex;
+    flex-direction: column;
 }
 .calculator{
     border: 2px solid #717477;
@@ -58,4 +59,13 @@ button{
 }
 .operator{
     color: rgb(117, 83, 168);
+}
+.credit{
+    margin-top: 60px;
+    margin-left: 70%;
+    color: white;
+}
+
+.credit a{
+    color: white;
 }
